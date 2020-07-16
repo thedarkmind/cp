@@ -1,0 +1,570 @@
+body{
+	font-size: 16px;
+	font-family: 'aldo', sans-serif;
+	position: relative;
+}
+
+
+header{
+	
+	width: 100%;
+	height: 35px;
+	
+	background: #233d58;
+	position: relative;
+	
+	z-index: 999;
+}
+
+
+header h1{
+	display: none;
+}
+
+	
+header nav .ioMenumovil{
+	height: 25px;
+	width: 120px;
+	cursor: pointer;
+	line-height: 42px;
+	margin: 0px 0px 0px 10px;
+	padding-top: 4px;
+	
+}
+
+header nav .ioMenumovil img{
+	height: 100%;
+}
+
+header nav #card_menu{ 
+	display: none;
+	position: relative;
+	width: 230px;
+	background: white;
+	top: -30px;
+	left: 0px;
+	border-right: 3px solid #AFAEAE;
+	z-index: 999;
+	padding-bottom: 50px;
+}
+
+header nav #card_menu #logo_menu{
+	/*background: red;*/
+	height: 200px;
+	width: 80%;
+	margin: 30px 0px;
+	margin-left: 10%;
+	margin-bottom: 50px;
+	text-align: center;
+
+}
+
+header nav #card_menu #logo_menu img{
+	width: 100%;
+	/*background: green;*/
+}
+
+header nav #card_menu ul{
+	margin-top: -20px;
+}
+
+header nav #card_menu ul li{
+	list-style: none;
+	font-size: 1.5em;
+	line-height: 37px;
+}
+
+
+header nav #card_menu ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+header #prev_section,
+header #next_section{
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 5px;	
+	position: absolute;
+	top: 0px;
+	overflow: hidden;
+
+}
+
+header #prev_section{
+	right: 35px;
+}
+header #next_section{
+	right: 5px;
+}
+
+header #prev_section img,
+header #next_section img{
+	width: 250%;
+	top: -19px;
+	left: -19px;
+	position: relative;
+}
+header #next_section img{
+	transform: rotate(180deg);
+}
+
+#slider{
+	width: 100%;
+	position: relative;
+	top: 66px;
+	margin-top: -66px;
+}
+
+#slider section.slide{
+	position: absolute;
+	width: 100%;
+	top: -20px;
+	left: 0px;
+}
+
+#slider #home{
+	background: #233d58;
+	font-family: 'aller';
+	position: relative;
+	text-align: center;
+	padding-bottom: 45px;
+}
+
+#slider #home .mainanimation{
+	width: 80%;
+	margin-left: 10%;
+	min-height: 300px;
+	position: absolute;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#slider #home .mainlogo{
+	background: none;
+	position: relative;
+	width: 60vw;
+	margin-left: 20vw;
+	min-height: 430px; 
+}
+
+#slider #home .mainlogo h2{
+	text-align: center;
+	font-size: 1.2em;
+	position: relative;
+	padding-top: 80px;
+	color: white;
+	font-weight: lighter;
+}
+#slider #home .mainlogo strong{
+	font-family: "aldo";
+	font-size: 2em;
+	display: block;
+}
+#slider #home .mainlogo figure,
+#slider #home .mainlogo figure img{
+	width: 100%;
+	margin: 0px;
+}
+#slider #home .mainlogo figure{
+	position: relative;
+	padding-bottom: 30px;
+}
+
+#slider #home .buttonspage{
+	width: 100%;
+	text-align: center;
+}
+#slider #home .buttonspage > *{
+	display: inline-block;
+	width: 40%;
+	margin: 5px 2.5%;
+	color: white;
+	padding: 15px 2.5%;
+}
+#slider #home #contratame{
+	cursor: pointer;
+	background: #f8931f;
+}
+#slider #home a{
+	text-decoration: none;
+	background: #29abe2;
+}
+
+
+#slider #aboutme{
+	height: 400px;
+	background: yellow;
+}
+#slider #skills{
+	height: 300px;
+	background: red;
+}
+#slider #portfolio{
+	height: 200px;
+	background: blue;
+}
+#slider #blog{
+	height: 100px;
+	background: purple;
+}
+
+#contact_form{
+	position: absolute;
+	right: 0px;
+	top: 35px;
+	background: white;
+	width: 250px;
+	border-top: 1px solid black;
+	box-shadow: 0px 0px 3px #9f9e9e;
+	font-family: 'aller';
+	height: 100vh;
+	z-index: 999;
+	display: none;
+}
+
+#contact_form #close_form{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 85%;
+	top: 190px;
+}
+
+#contact_form #close_form:hover{
+	cursor: pointer;
+}
+
+#contact_form #close_form:before{
+	font-family: 'icomoon';
+	content: "\ea0f";
+	top: 6px;
+	left: 7.5px;
+	position: relative;	
+}
+
+#contact_form figure{
+	height: 180px;
+	width: 100;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background: #29abe2;
+}
+
+#contact_form figure img{
+	height: 100%;
+	margin: 0px;
+}
+
+#contact_form p{
+	margin: 20px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+#contact_form input,
+#contact_form textarea{
+	display: block;
+	margin: 20px;
+	border: none;
+	border-bottom: 2px solid gray;
+	width: 90%;
+	margin-left: 5%;
+	padding-bottom: 3px;
+	margin-bottom: 50px;
+	font-weight: bold;
+}
+
+#contact_form #button{
+	background: #f8931f;
+	color: white;
+	border: none;
+	padding: 8px 0px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#contact_button{
+	width: 60px;
+	height: 60px;
+	background: #f8931f;
+	border-radius: 50%;
+	color: white;
+	z-index: 80;
+	right: 10px;
+	position: fixed;
+	top: 80vh;
+}
+
+#contact_button:hover{
+	cursor: pointer;
+}
+#contact_button:before{
+	font-family: icomoon;
+	content: "\f1d8";
+	position: relative;
+	font-size: 2em;
+	top: 12px;
+	left: 12px;
+}
+
+footer{
+	width: 100%;
+	background: black;
+	color: white;
+	text-align: center;
+	z-index: 90;
+	height: 150px;
+	position: fixed;
+	bottom:-130px;
+	transition-duration: 0.4s;
+}
+
+footer:hover{
+	bottom: 0px;
+}
+
+footer:after{
+	font-family: 'icomoon';
+	content: "\e923";
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	margin-left: -40px;
+	margin-top: -30px;
+	border-radius: 50%;
+	background: black;
+	color: white;
+	font-size: 2.5em;
+	transition-duration: 0.4s;
+	}
+
+footer:hover:after{
+	transform: rotate(180deg);
+	background: white;
+	color: none;
+	text-shadow: 0px 18px 0px black;
+
+}
+footer .rrss{
+	margin-top: 70px;
+	width: 100%;
+	height: 40px;
+}
+
+footer .rrss a{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	position: relative;
+}
+footer .rrss a:before{
+	color: white;
+	text-decoration: none;
+	position: absolute; /*para que no se muevan*/
+	font-size: 2em;
+	top: 1px;
+	left: 5px;
+	font-family: 'icomoon';
+
+}
+footer .rrss a:nth-child(1):before{
+	content: "\ea96";
+}
+footer .rrss a:nth-child(2):before{
+	content: "\ea92";
+}
+footer .rrss a:nth-child(3):before{
+	content: "\ea90";
+}
+footer .rrss a:nth-child(4):before{
+	content: "\ea9d";
+}
+
+footer p{
+	font-size: 0.7em;
+	font-weight: lighter;
+	font-family: 'aller';
+}
+
+@media screen and (min-width: 375px){
+	/*#slider #home{
+	padding-bottom: 34px;
+	}*/
+	#slider #home .mainlogo{
+		width: 270px;
+		left: 50%;
+		margin-left: -135px;
+	}
+	#slider #home .mainlogo h2{
+		font-size: 1.4em;
+	}
+	#slider #home .mainlogo figure{
+		width: 80%;
+		margin-left: 10%;
+	}
+	#slider #home .buttonspage > *{
+		width: 200px;
+	}
+
+	
+}
+@media screen and (min-width: 600px){
+	body{
+		background: orange;
+	}
+	#slider #home{
+	padding-bottom: 92px;
+	}
+
+}
+@media screen and (min-width: 767px){
+	body{
+		background: yellow;
+	}
+	header{
+		height: 50px;
+	}
+
+	header h1{
+		display: inline-block;
+		width: 20%;
+		margin: 0px;
+		height: 50px;
+		margin-left: 80px;
+		line-height: 50px;
+		min-width: 200px;
+	}
+	header h1 > *{
+		display: inline-block;
+		vertical-align: middle;
+		text-decoration: none;
+		color: white;
+		font-size: 0.8em;
+		margin:0px 3px;
+		margin-top: -4px;
+		/*background: red;*/
+	}
+
+	header h1 figure{
+		height: 40px;
+		width: 40px;
+		margin: 0px;
+	}
+	header h1 figure img{
+	width: 100%;
+	}
+
+header nav{
+	display: inline-block;
+	vertical-align: middle;
+	width: 62%;
+	position: relative;
+}
+
+header nav #showMenu,
+header nav #hideMenu{
+	display: none;
+}
+
+header  nav #card_menu{
+	display: inline-block;
+	border: none;
+	background: none;
+	position: relative;
+	top: 0px;
+	width: 100%;
+	text-align: right;
+	padding-bottom: 0px;
+	}	
+
+header  nav #card_menu figure{
+	display: none;
+}
+header  nav #card_menu ul{
+	padding: 0px;
+	margin: 0px;
+	margin-top: -15px;
+}
+header  nav #card_menu ul li{
+	display: inline-block;
+	width: 75px;
+	text-align: center;
+	font-size: 1.2em;
+	margin: 0px -2px;
+}
+header  nav #card_menu ul li a{
+	color: white;
+}
+	header #prev_section /*img*/,
+	header #next_section /*img*/{
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		background: #29abe2;
+		right: 40px;
+		z-index: 999;
+		border-radius: 50%;
+
+	}
+	header #prev_section{
+		top: 115px;
+	}
+	header #next_section{
+		top: 190px;
+	}
+	header #prev_section img,
+	header #next_section img{
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	}
+
+	#contact_form{
+		top: 50px;
+		width: 400px;
+	}
+
+	#contact_button{
+		right: 32px;
+	}
+
+
+
+
+@media screen and (min-width: 950px){
+	body{
+		background: green;
+	}
+	#slider #home{
+	padding-bottom: 45px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

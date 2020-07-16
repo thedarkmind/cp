@@ -1,0 +1,998 @@
+/*1.- vamos a definir el formato de todo el esqueleto del  proyecto*/
+body{
+	font-size: 16px;
+	/*1a definimos las fuents, primero la chida, despues el backup en caso de que la chida no jale*/
+	font-family: 'aldo', sans-serif;
+	/*el color del background definido x el cliente*/
+	/* 5.1 vamos a cambiarle el color para probar lo que le estamos 
+	haciendo al header background: #233d58;*/
+	/*EDIT 11 ya por fin le quitamos el color al body
+	background: purple;*/
+	/*es buena practica poner el position relative para posicionar cosas con respecto al body*/
+	position: relative;
+} /*todo lo que venga a continuacion heredara las caracteristicas del body*/
+
+/*6.- vamos a darle propiedades al header*/
+header{
+	/* 6a para que ocupe el 100% de la pagina*/
+	width: 100%;
+	height: 35px;
+	/* 6b ponerle un color llamativo para poder ver en donde esta posicionado
+	en la pagina y cuanto ocupa
+	background: red;*/
+	/* 6b1 pero le ponemos mejor el color seleccionado, al cabo que el ondo es de otro 
+	color*/
+	background: #233d58;
+	position: relative;
+	/* OJO todo se desplaza porque el H1 tiene sus margenes, y eso ocasiona
+	que todo se desplace para abajo y que haya una raya entre el tope y el header*/
+	/*10e19 hay que darle un zindex al header par que quede por arriba de los slides*/
+	z-index: 999;
+}
+
+/* 6c en la version mobil (estamos haciendo mobil first) no aparece el titulito de sonia carretero
+ni el gato, entonces hay que ocultarlo
+SIGUE apareciendo un espacio pero es porque sigue habiendo cosas*/
+header h1{
+	display: none;
+}
+
+	/* 6c1 tambien vamos a desaparecer el menu para trabajar con los botones de flechitas*/
+	/* EDIT 6k ahora vamos a trabajar con el menu, asi que hay que quitarle el display none para
+	que todo aparezca de nuevo y poder trabajar con el, vamos a empezar con el mobile first*/
+	/*header nav{
+	display: none;
+	}*/
+
+/* 6k1 vamos a darle estilo a las imagenes con las palabras exit y menu
+por eso ambas tienen la misma clase, para poder darle propiedades a ambas de 
+un jalon. Esta es la cajita (es como un figure) en donde va a ir la imagen*/
+header nav .ioMenumovil{
+	/* 6k2 le damos el tamaño del header para que sean del mismo tamaño*/
+	height: 25px;
+	/* 6k3 se le da la anchura, en este aso, lo especifico el cliente*/
+	width: 120px;
+	/* 6k4 queremos que cuando se le pase el raton por encima se cambie el cursor x manita*/
+	cursor: pointer;
+	/* 6k5 lo centramos verticalmente en el escpacio del header*/
+	line-height: 42px;
+	/* 6k6 por los margenes no se sube toda la imagen, por eso le quitamos los margenes excepto el de la 
+	izq. para que todo se suba pero que no quede tan pegado a la iz*/
+	margin: 0px 0px 0px 10px;
+	/* 6k7 queda demasiado pegado a arriba, si le movemos al margen se despedorra todo
+	por lo que le vamos a poner un padding. No lo colocamos con un margin top o con position top
+	porque queremos que el PADDING SEA CLICKEABLE*/
+	padding-top: 4px;
+	
+}
+
+/* 6k1a aqui es en donde le vamos a dar propiedades a la imagen en si*/
+header nav .ioMenumovil img{
+/* 6k1b le decimos que ocupe el 100% del tamaño del figure 6k1  A LO ALTO*/
+	height: 100%;
+}
+
+/* 6L ahora vamos a darle propiedades a la tarjeta del menu en donde aparecen las opciones*/
+header nav #card_menu{ 
+	/* EDIT hay que ocultarlo, ya que no debe de aparecer hasta que se le de click
+	a la palabra menu*/
+	/* EDIT 2 ahora hay que quitarle el display none para poder verlo con 6r*/
+	/* EDIT 3 reactivamos el display none para el 6u con JS*/
+	display: none;
+	/* 6L1 le damos un position relative, su anchura y una latura de referencia*/
+	position: relative;
+	width: 230px;
+	/* 6L8 ahora le quitamos la altura para que se ajuste el tamaño a los elementos del menu*/
+	/*height: 500px;*/
+	/* 6L2 le ponemos el background blanco pa saber en donde esta ( de todas formas al final
+	tiene que ser blanco*/
+	background: white;
+	/* 6L3 ahora vamos aposicionarlo para que se vaya arriba de todo, le pongo -30px para que se vaya hasta
+	arriba*/
+	top: -30px;
+	/* 6L4 le ponemos left para expecificarlo, no mas para que se vaya a extrema iz*/
+	left: 0px;
+	/* 6L5 le vamos aponer un pequeño bordecito pa que se vea cuco, como sombra*/
+	border-right: 3px solid #AFAEAE;
+	/* 6L6 le ponemos el z index para que siempre este por encima de todo sin problema*/
+	z-index: 999;
+	/* 6L7 le ponemos un padding bottom para que no corte feo hasta abajo, sino que tenga un espacio y se vea bien*/
+	padding-bottom: 50px;
+}
+
+/*6m ahora vamos a ajustar el gato adentro de la tarjeta del menu
+primero el figure, o la cajita en donde a a estar*/
+header nav #card_menu #logo_menu{
+	/* 6m1 le ponemos un background red pa ver que espacio ocupa
+	EDIT ya se lo podemos quitar para trabajar con *ñ/
+	background: red;*/
+	/* 6m2 pero lo queremos un poco mas grande*/
+	height: 200px;
+	/* 6m3 lo ponemos de ancho el 80% del tamaño de la tarjeta*/
+	width: 80%;
+	 /* 6m4 le vamos a dar margenes para que quede un poco mas separado de ariiba, a la derecha no
+	 xq eso lo hacemos con la siguiente linea*/
+	margin: 30px 0px;
+	/* 6m5 y le damos un margen izq de 10% y asi queda centrado: o sea 
+	80% de ancho+ 10% de margen iz, en automatico se centra con un 10% del otro lado*/
+	margin-left: 10%;
+	/* le ponemos un poco mas grande el margin de abajo pa q se separe un poco mas de las+
+	opciones del menu*/
+	margin-bottom: 50px;
+
+}
+
+/* 6n ahora vamos a ajustar la imagen del gato dentro de su figure*/
+header nav #card_menu #logo_menu img{
+	/* 6n1 le decimos que se ajuste al 100% de tamaño que el padre, o sea, el figure*/
+	width: 100%;
+	/* 6n0 le ponemos un background green a ver que espacio ocupa
+	EDIT ya se lo podemos quitar para poder trabajar con 6ñ
+	background: green;*/
+}
+
+/* 6ñ ahorta hay que empezar a definir la lista de elementos, la ul*/
+header nav #card_menu ul{
+	/* 6ñ1 le ponemos el fondo rojo pa saber en donde esta
+	EDIT ya le podemos quitar el color rojo una vez terminado con 6p
+	background: red;*/
+	/* 6ñ2 vamos a subir un poquito el menu pa que no quede tan abajo*/
+	margin-top: -20px;
+}
+
+/* 6o ahora vamos a trabajar con los elementos de la lista*/
+header nav #card_menu ul li{
+	/* 6o1 vamos a quitarle el puntito todo feo a los elementos de la lista*/
+	list-style: none;
+	/* 6o2 vamos a hacer la letra mas grande*/
+	font-size: 1.5em;
+	/* 6o3 vamos a separar los elementos entre si pa q no esten tan pegados*/
+	line-height: 37px;
+}
+
+/* 6p ahora vamos a trabajar con los enlaces de la lista, si, los elemntos son enlaces, 
+pero tienjen carcteristicas propias*/
+header nav #card_menu ul li a{
+	/* 6p1 les vamos a quitar las rayistas de abajo a los enlaces*/
+	text-decoration: none;
+	/* 6p2 y les vamos a cambiar el color por uno mejor*/
+	color: black;
+}
+
+/* 6d vamos a darle caracteristicas a los botones de flechita, ambos comparten
+caracteristicas, por eso se hacen los 2 juntos*/
+header #prev_section,
+header #next_section{
+	width: 25px;
+	height: 25px;
+	/* 6d1 le ponemos un background rojo para ver en donde quedan posicionados
+	EDIT para 6g: ya que quedo todo bien posicionado hay que quitarle el
+	backgorund red*/
+	/*background: red;*/
+	/* 6d2 que cuando se le pase el cursos encima cambie a una manita*/
+	cursor: pointer;
+	/* 6d3 para evitar que si la imagen es demasiado grande desplace todo
+	EDIT para 6g1 hay que quitar el overflow para que se vean por encima del div
+	EDIT para 6g4 reactivamos el overflow hidden*/
+	overflow: hidden;
+	margin: 5px;	
+	/* 6d4 ya con esto todo se sube y no queda ninguna "luz" entre el tope y el header*/
+	position: absolute;
+	top: 0px;
+	/*OJO las flechitas desaparecen porque estan dentro de los divs rojos*/
+/*EDIT hay que ponerle el overflow hidden porque se veia el scroll horizontal, xq los botoncitos
+estan ampliados a un 250% y se desbordan y joden el responsive desing*/
+	overflow: hidden;
+
+}
+
+/*6f vamos a separar ambas flechitas*/
+header #prev_section{
+/* 6f2 este tiene que estar pagado del otro lado, comoocupan 25px y tienen 5px de margen
+25+5=30+5 mas de separacion entre ambos = 35ps*/
+	right: 35px;
+}
+header #next_section{
+/* 6f1 es-te tiene que estar mas pegado al borde der*/
+	right: 5px;
+}
+
+/* 6g vamos a definir los estilos de las flechitas en de los divs*/
+header #prev_section img,
+header #next_section img{
+	/*6g1 para que ocupen el 100% del espacio del div
+	EDIT quedan muy chiquitas, mejor un 250% pa que se vean chidas*/
+	width: 250%;
+	/* 6g2 vamos a posicionarlas en el centro del div*/
+	top: -19px;
+	left: -19px;
+	/* 6g3 hay que decirle como se va a posicionar*/
+	position: relative;
+}
+/* 6g4 hay que rotar el de la derecha para que quede viendo hacia el otro lado*/
+header #next_section img{
+	transform: rotate(180deg);
+}
+
+/* 7c viene del HTML hay que darle propiedades al slider*/
+#slider{
+	/* 7c1 que oocupe el 100% de la pagina*/
+	width: 100%;
+	/* 7c2 le damos posicion*/
+	position: relative;
+	/* 7c3 le damos una latura obligatoria pa que se vea bien*/
+	/*height: 588px;*/
+	/* 7c4 le damos un background negro pa saber en donde esta*/
+	/*10 EDIT le quitamos el color negro para empezar a trabajar con el 10*/
+	/*background: black;*/
+	/* 7c5 le damos un borde rojo, igual, por ubicacion
+	y  despus lo quitamos porque crea conlficto con el responsive por salirse de
+	la anchura definida por nosotros*/
+	/*border: red;*/
+	top: 66px;
+	margin-top: -66px;
+}
+
+/* 7d ahora hay que hacer que solo uno de los slides se vea mientras que los demas no*/
+#slider section.slide{
+	/* 7d1 es tan sencillo como darle a cada secion un position absolute*/
+	position: absolute;
+	/* 7d2 le damos una anchura del 100%*/
+	width: 100%;
+	/* 7d3 los ponemos todos hasta arriba*/
+	/*EDIT 10e18 subimos el slide paraque ya no se vea el color morado, ni el verde, ni ningun otro*/
+	top: -20px;
+	/* 7d4 los ponemos todos pegaditos*/
+	left: 0px;
+}
+
+/* 7e ahora, para guiarnos en donde esta cada slider vamos a cambiarle el tamaño
+y el color a cada uno, para darnmos una idea de que sucede y su posicion... despues
+vamos a borrar estas caracteristicas porque en ralidad no nos van a servir al final
+OJO el ultimo SIEMPRE va a estar por encima de todos*/
+#slider #home{
+	/*10.1 al tener una altura fija no se ajusta el contenido, asi que es hora de
+	quitarlo
+	height: 500px;*/
+	/*le cambiamos el color de orange a green para que no se pierda el icono del avion*/
+	/*10 EDIT le quitamos el color verde para poder empezar atrabajar con el 10*/
+	/*background: green;*/
+	/* 10 le ponemos el color azul que definio la cliente*/
+	background: #233d58;
+	/*10.2 le damos el font family*/
+	font-family: 'aller';
+	/*10.3 le ponemos position relative, ya que este es el padre y todo lo vamos a posicionar
+	en relacion a el*/
+	position: relative;
+	text-align: center;
+	/*10.4 hay que ponerle un padding, ya que el footer va a robar un poco de espacio
+	abajo*/
+	padding-bottom: 45px;
+	/*height: 100%;*/
+}
+
+/*10a1 ahora vamos a definir el main animation particulas
+OJO hay una pagina que se llama CODEPEN.IO en donde ya hay animaciones hechas
+por otras personas*/
+#slider #home .mainanimation{
+	/*10a2 le ponemos el bkground rojo de siempre para ubicarlo*/
+	/*10a4 con las particulas jalando ya podemos quitarle el color rojo de fondo
+	background: red;*/
+	/*10a3 le damos una anchura del 80%*/
+	width: 80%;
+	margin-left: 10%;
+	min-height: 300px;
+	/*10b8 le damos un position absolute para que no interrumpa el flujo de la caja y que
+	todo se posicione por encima como si no existiera, ya con esto se sube la caja del logo*/
+	position: absolute;
+}
+
+/*10a4 aqui pegamos el css de la animacion de las particulas que nos chutamos de la pagina web*/
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/*10b1 ahora vamos a definir el main logo*/
+#slider #home .mainlogo{
+	/*10b2 hay que ponerle un color transparente, ya que va por encima de la animacion
+	de las particula*/
+	background: none;
+	/*10b3 le ponemos el position relative*/
+	position: relative;
+	/*10b4 le ponemos un fondo de color solo para saber que espacio ocupa y unbicaion*/
+	/*EDIT 10e17 le quitamos el color de posicionamiento
+	background: green;*/
+	/*10b5 le damos una anchura del 60% del dispositivo*/
+	width: 60vw;
+	/*10b6 lo centramos, si es un 60% queda un 40% libre, o sea 20% de cada lado*/
+	margin-left: 20vw;
+	/*10b7 le damos una altura minima de 430px*/
+	min-height: 430px; 
+}
+
+/*10c1 ahora vamos a darle estilo al titulo*/
+#slider #home .mainlogo h2{
+	/*10c2 le damosun poco mas de tamaño*/
+	font-size: 1.2em;
+	/*10c3 para que no este tan pegado a arriba le damos un padding top*/
+	padding-top: 80px;
+	/*10c4 hay que poner el texto en blanco, ya que todo el titulo esta en blanco*/
+	color: white;
+	/*10c5 y hacemos la letra mas inita*/
+	font-weight: lighter;
+}
+/*10c6 ahora vamos a hacer la parte del STRONG*/
+#slider #home .mainlogo strong{
+	/*10c7 vamos a hacerla mas grande para destacarla mas*/
+	font-size: 2em;
+	/*10c8 y le cambiamos la fuente, ya que es diferente*/
+	font-family: 'aldo';
+	/*10c9 le ponemos un display block para que no se mueva y no se pongan en linea*/
+	display: block;
+}
+
+/*10d1 vamos a darle estilo al figure y definimos de una vez el img*/
+#slider #home .mainlogo figure,
+#slider #home .mainlogo figure img{
+	/*10d2 le poneos una anchura del 1005 del tamaño del padre a ambos*/
+	width: 100%;
+	/*10d3 sin margenes con respecto a la caja del padre*/
+	margin: 0px;
+}
+/*10d4 le damos un padding bottom para que se separe un poco y no quede tan pegado al fondo*/
+#slider #home .mainlogo figure{
+	padding-bottom: 50px;
+}
+
+/*10e1 vamos a darle estilo a los botones primero dandole estilo al div que contiene a los
+botones. esta es el area general*/
+#slider #home .buttonspage{
+	/*10e2 le damos una anchura del 1005*/
+	width: 100%;
+	/*10e3 los botones tienen que ir centrados*/
+	text-align: center;
+	/*10e4 le ponemos el background white para ver en donde esta*/
+	/*EDIT 10e17 le quitamos el color de posicionamiento
+	background: white;*/
+}
+/* ahora hay que definir uno a un o los botones*/
+/*10e5 todo lo que este dentro de buttonspage, que sea hjo se le van a aplicar los estilos
+con el > estamos atacando al div y al a*/
+#slider #home .buttonspage > *{
+	/*10e6 tienen que estar uno a lado del otro*/
+	display: inline-block;
+	/*10e7 le ponemos su background rojo pa saber que espacio ocupan*/
+	/*EDIT quitamos el color10e17
+	background: red;*/
+	/*10e8 le damos una anchura del 40% a cada uno, del tamaño del padre*/
+	width: 40%;
+	/*10e9 le damos un margen superios y a los lados del 2.5% del tamañod el padre*/
+	margin: 5px 2.5%;
+	/*10e10 ambos tienen el color de la letra blanco*/
+	color: white;
+	/*10e14 le ponemos un padding para que no esten tan pegados dentro del boton*/
+	padding: 15px 2.5%;
+}
+/*10e11 ahora vamos a definir cada boton por separado*/
+#slider #home #contratame{
+	/*10f1 hay que cambiarle el cursor*/
+	cursor: pointer;
+	/*10f2 hay que ponerle de fondo el mismo naranja del avion*/
+	background: #f8931f;
+}
+/*10g1 ahora vamos a hacer el boton del enlace*/
+#slider #home a{
+	/*10g2 le quitamos el subrayado*/
+	text-decoration: none;
+	/*10g3 le ponemos el fondo de color azulito claro y quitamos los colores de posicion*/
+	background: #29abe2;
+}
+
+
+#slider #aboutme{
+	height: 400px;
+	background: yellow;
+}
+#slider #skills{
+	height: 300px;
+	background: red;
+}
+#slider #portfolio{
+	height: 200px;
+	background: blue;
+}
+#slider #blog{
+	height: 100px;
+	background: purple;
+}
+
+/*9a9 vamos aponer bonito todo lo del email*/
+#contact_form{
+	/*9a10 le ponemos un position absolute para que se vaya por envima de todo y no al final*/
+	position: absolute;
+	right: 0px;
+	/* 9a11 lo pegamos a la derecha y lo ponemos un top de 35px, que es el ancho del header*/
+	top: 35px;
+	/* 9a12 le ponemos el color rojo de siempre par apoder saber en donde esta
+	EDIT le ponemos el fondo blacno como debe de ir
+	OJO el sobrecito se va a perder porque es blanco, pero luego le cambiamos el color*/
+	background: white;
+	/* EDIT ya le quitamos el borde verde por 9a53
+	border: 1px solid green;*/
+	/* 9a13 le vamos a dar su tamaño FIJO*/
+	width: 250px;
+
+	/*9a14 le ponemos un borde supoerior a peticion del cliente*/
+	border-top: 1px solid black;
+	/*9a15 le ponemos la sombra con box shadow, sin desplazamiento, pero con difuminacion*/
+	box-shadow: 0px 0px 3px #9f9e9e;
+	/*9a16 le ponemos e ltimpo de letra ller, que ess el que definimos con el archivo de fonts*/
+	font-family: 'aller';
+	/*9a54 le vamos a dar que sea de altura el 100% pero no del padre, sino que de la pantalla del dispositivo*/
+	height: 100vh;
+	/*9a55 le damos el index para evitar cualquier tipo de problema*/
+	z-index: 999;
+	/*9a56 ocultamos el contact forma para poder trabajar con el boton del avion que abre el formulario*/
+	display: none;
+}
+
+/*9a17 ahora vamos a crear el botoncito de la cruz del close form que cierra el formulario*/
+#contact_form #close_form{
+	/*9a18 le ponemos el position absolute par auq este encima de todo*/
+	position: absolute;
+	/*9a19 le ponemos el color rojo de siempre para saber en donde esta
+	EDIT ya le quitamos el color a la cajita
+	background: red;*/
+	/* 9a20 le damos una altura y una anchura*/
+	width: 30px;
+	height: 30px;
+	/*9a21 lo posicionamos*/
+	left: 85%;
+	top: 190px;
+}
+
+/*9a22 vamos a hacerlo intuitivo parra que cuando se le pase el raton por encima el cursos cambie*/ 
+#contact_form #close_form:hover{
+	cursor: pointer;
+}
+
+/*9a23 vamos a hacer que aparezca la crucectita de cerrado y aqui vamos a usar los icofonts*/ 
+#contact_form #close_form:before{
+	font-family: 'icomoon';
+	/*9a24 aqui vamos a poner el codigo de icomoon es algo complicado pero vamos a ver cual es
+	yendo a la pagina y checando las imagenes que bajamos para ver cual es el codigo de la imagen
+	que necesitamos y viendo su codigo en el css de icomoon*/
+	content: "\ea0f";
+	/*9a25 vamos a posicionarlo*/
+	top: 6px;
+	left: 7.5px;
+	/*9a26 le ponemos el position relative para que sepa con respecto a que acomodarse*/
+	position: relative;	
+}
+
+/*9a27 ahora vamos con la cajita con la imagen del sobre*/
+#contact_form figure{
+	/*9a28 le ponemos una altura de 180px porque al div le dimos una de 190px*/
+	height: 180px;
+	/*9a29 la anchura va a ser del 100% del padre*/
+	width: 100;
+	/*9a30 le quitamos los margenes y los paddings*/
+	margin: 0px;
+	padding: 0px;
+	/*9a31 le ponemos el text align center para que el icono se quede centrado*/
+	text-align: center;
+	/*9a32 hay que ponerle de background el azulito claro que nos dieron*/
+	background: #29abe2;
+}
+
+/*9a33 ahora vamos a acomodar la imagen del sobre*/
+#contact_form figure img{
+	/*9a34 le ponemos una altura del 100% del tamaño de la cajita*/
+	height: 100%;
+	/* 9a35 le quitamos los margenes para que no nos haga cosas raras*/
+	margin: 0px;
+}
+
+/*9a36 ahora vamos a trabajar con el parrafo*/
+#contact_form p{
+	/*9a37 esta muy pegado a la iz, le vamos a dar margen*/
+	margin: 20px;
+	/*9a38 le vamos a dar anchura
+	los parrafos por default tienen un display block que hace que ocupen toda la linea*/
+	width: 90%;
+	/* le damos como siempre un background red pa saber en dodne esta
+	background: red;*/
+	/*9a39 le damos su margin left*/
+	margin-left: 5%;
+}
+
+/*9a40 ahora vamos a darle estulo a los imputs y a los text area*/
+#contact_form input,
+#contact_form textarea{
+	/*9a41 le damos display block porque aqui si teiene que estar cada uno encima del otro*/
+	display: block;
+	/*9a42 le ponemos sus margenes*/
+	margin: 20px;
+	/*9a43 le quitamos los bordes que aparecen por default*/
+	border: none;
+	/*9a44 solo establecemos el borde de abajo para que se vea como linea*/
+	border-bottom: 2px solid gray;
+	/*9a45 le ponemos la misma anchura y elmargen izq para que todo quede alineado como 9a36*/
+	width: 90%;
+	margin-left: 5%;
+	/*9a46 vamos a ponerle un padding abajo para que tenga como efecto el separar un poco los campos*/
+	padding-bottom: 3px;
+	/*9a47 las cosas estan muy juntas entre si, ya no entre el contenido y el borde
+	una cosa con respecto a la otra estan muy juntas, por eso l eponemos un margen de abajo*/
+	margin-bottom: 50px;
+	/*9a48 le damos grosor a la letra*/
+	font-weight: bold;
+}
+
+/*9a49 ahora vamos a definir el boton de enviar*/
+#contact_form #button{
+	/*9a50 le ponemos ya su background del color que nos pidieron*/
+	background: #f8931f;
+	color: white;
+	/*9a51 le quitamos el borde que hereda de los imput que hace que se vea todo feo*/
+	border: none;
+	/*9a52 le ponemos paddings arriba y abajo para que no se vea tan junto*/
+	padding: 8px 0px;
+	/*9a53 le vamos a dar los pbordes redondeados*/
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*9b1 vamos a darle propiedades al botoncito del avion que invoca el formulario de contacto*/
+#contact_button{
+	/*9b2 le damos tamaño*/
+	width: 60px;
+	height: 60px;
+	/*9b3 le damos color como siempre para ubicarlo
+	EDIT ya le damos el color naranja que le corresponde 9b12*/
+	background: #f8931f;
+	/*9b4 para que sea redondo le ponemos el border radius*/
+	border-radius: 50%;
+	/*9b5 le ponemos color blanco, aunque de por si el avioncito es blanco*/
+	color: white;
+	/*9b6 le doy el z index, pero no le puedo poner el 999 de siempre, ya que se quedaria por enciam
+	incluso del formulario cuando este aparezca*/
+	z-index: 80;
+	/*9b7 lo posicionamos a la derecha*/
+	right: 10px;
+	/*9b8 le ponemos position fixed, para que siempre se quede ahi aunque se haga scroll en la pagina*/
+	position: fixed;
+	/*9b9 le ponemos de margen superior el 80% del tamaño vertical de la pantalla*/
+	top: 80vh;
+}
+
+/*9b10 vamos a ponerle el avioncito, que como no lo encontre, pues le voy a poner una flecha*/
+#contact_button:hover{
+	/*9b11 le ponemos el cursor pointer*/
+	cursor: pointer;
+}
+#contact_button:before{
+	/*9b12 ponemos el avion del icomoon*/
+	font-family: icomoon;
+	content: "\f1d8";
+	/*9b13 le damos tamaño al avion*/
+	position: relative;
+	font-size: 2em;
+	/*9b14 lo subimos porque quedo muy abajo*/
+	top: 12px;
+	left: 12px;
+	/*ahora hay que hacer que cuando se le de click muestre el formulario con JS*/
+}
+
+/*11.1 vamos a pempezar a trabajar con el footer*/
+footer{
+	width: 100%;
+	background: black;
+	/*11.2 el color de las letras es blanco*/
+	color: white;
+	text-align: center;
+	/*11.3 le ponemos un zindex inferior a los elementos del menu para que no los tape*/
+	z-index: 90;
+	height: 150px;
+	/*11.4 el position fixed es para que siempre este ahi sin importar la pagina*/
+	position: fixed;
+	/*11.4.1 esta es en suposicion de reposo, antes de que se le pase el raton por encima*/
+	/*EDIT ya le puedo quitar el bottom: 0px; que le puse para poder trabajarlo y devolverlo
+	a su posicion original */
+	bottom:-130px;
+	/*11.4.2 le vamos a dar una duracion a la trnsicion para que no sea tan ruda*/
+	transition-duration: 0.4s;
+}
+
+/*11.5 vamos a hacer la animacion del footer*/
+footer:hover{
+	bottom: 0px;
+}
+
+/*11.6 vamos a hacer el circulito que gira al pasar el raton*/
+footer:after{
+	/* 11.7 metemos en el content es la flechita*/
+	font-family: 'icomoon';
+	content: "\e923";
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	/*hay que ponerle el margen negativo para que no se posicione a partir del 50% del pafre en adelante
+	es decir, se empieza a pintar a partir de la mitad y lo ponemos y lo regresamos la mitad de la anchura*/
+	margin-left: -40px;
+	/*para saber en donde esta
+	EDIT ya lo puedo quitar
+	background: orange;*/
+	/*le ponemos un margin top de la mitad tambien para que sobresalga del cuadrito*/
+	margin-top: -30px;
+	border-radius: 50%;
+	background: black;
+	color: white;
+	/*vamos a girar la flechita a su posicion correcta*/
+	/*transform: rotate(-180deg);*/
+	/* vamos a aumentar el tamaño*/
+	font-size: 2.5em;
+	/*y a darle una transicion menos brusca*/
+	transition-duration: 0.4s;
+	}
+
+/*11.8 vamoa  hacer que cambie cuando se le de hover al footer en cualquier parte
+ya despues defnimos el after*/
+footer:hover:after{
+	/* la flecha gira y se pone en negro con al bg blanco*/
+	transform: rotate(180deg);
+	background: white;
+	color: none;
+	/*un truco para poder centrar es hacer una sombra replica y posicionar la sombra, poniendo el objeto del color del fondo*/
+	text-shadow: 0px 18px 0px black;
+
+}
+/*11a.1 vamos aponer los botones de los enlaces de las redes sociales*/
+footer .rrss{
+	/*11a.2 le damos un margin top para darle espacio con el circulito*/
+	margin-top: 70px;
+	width: 100%;
+	height: 40px;
+	/*11a3 para que alcancemos a ver algo le ponemos un bckgr white*/
+	/*11a8 ya le podemos quitar el bg blanco
+	background: white;*/
+}
+
+/*11a4 ahora vamos directamente con los enlaces*/
+footer .rrss a{
+	/*11a5 vamos a vef cuanto ocupa cada elnlace*/
+	width: 40px;
+	height: 40px;
+	/*11a8 ya le podemos quitar el bg verde
+	background: green;*/
+	/*11a6 para que aparezcan uno a lado del otro*/
+	display: inline-block;
+	/*le damos position relative para que se acomode al padre*/
+	position: relative;
+}
+/*11a7-1 le vamos a dar propiedades a todos los a parejos*/
+footer .rrss a:before{
+	color: white;
+	text-decoration: none;
+	position: absolute; /*para que no se muevan*/
+	font-size: 2em;
+	top: 1px;
+	left: 5px;
+	font-family: 'icomoon';
+
+}
+/*11a7 vamos a ponerle imagen a cada uno de los espacios de enlace de rrss*/
+footer .rrss a:nth-child(1):before{
+	content: "\ea96";
+}
+footer .rrss a:nth-child(2):before{
+	content: "\ea92";
+}
+footer .rrss a:nth-child(3):before{
+	content: "\ea90";
+}
+footer .rrss a:nth-child(4):before{
+	content: "\ea9d";
+}
+
+/*11b1 le damos propiedades al parrafo*/
+footer p{
+	font-size: 0.7em;
+	font-weight: lighter;
+	font-family: 'aller';
+}
+
+/*2.-vamos a hacer el esqueleto del mobile first y responsive design
+haciendo que cambie de color en cada tamaño para ver como se comporta en c u*/
+@media screen and (min-width: 375px){
+	/*10c10 ya podemos quitarle eso de que el body cambie de color
+	body{
+		background: red;
+	}*/
+#slider #home{
+	padding-bottom: 34px;
+	}
+
+	/*10c12 el 60% del ancho puede ser mucho, asi que hay que cambiarlo
+	y le ponemos una anchura fija*/
+	#slider #home .mainlogo{
+		width: 270px;
+		/*10c13 y lo centramos*/
+		left: 50%;
+		/*10c14 en le margin left hay que ponerle  en negativo la mitad de lo que esta ocupando para que 
+		se vaya al centro*/
+		margin-left: -135px;
+	}
+
+	/*10d4 vamos a cambiar el tamaño del logo*/
+	#slider #home .mainlogo figure{
+		width: 80%;
+		margin-left: 10%;
+	}
+	/*10e15 vamoa a hacer que los botones tengan un ancho fijo*/
+	#slider #home .buttonspage > *{
+		width: 200px;
+	}
+
+	/*10c11 en el manin logo h2 le vamos a poner que el tamano de la letra tambien crezca*/
+	#slider #home .mainlogo h2{
+		font-size: 1.4em;
+	}
+}
+@media screen and (min-width: 600px){
+	body{
+		background: orange;
+	}
+	#slider #home{
+	padding-bottom: 92px;
+	}
+
+}
+@media screen and (min-width: 767px){
+	body{
+		background: yellow;
+	}
+	/* 6h vamos a activar el header y el h1 para pantallas grandes*/
+	/* 6h1 el header debe tener una altura ma grande para pantallas grandes*/
+	header{
+		height: 50px;
+	}
+
+	/* 6h2 ahora vamos a definir el h1, que es la palabra sonia y el logo del gato*/
+	header h1{
+	/* 6h2 le ponemos un display inline block para que este en linea con el resto del menu*/
+		display: inline-block;
+	/*6h3 le ponemos una anchura porcentual para que vaya creciendo conforme a la pantalla*/
+		width: 20%;
+	/* 6h4 le ponemos un background rojo para saber elespacio que ocupa
+	EDIT una vez que el texto y la imagen ya estan centrados (6i, j y k) le podemos quitar
+	el color rojo*/
+		/*background: red;*/
+	/* 6h5 le quitamos el margen xq tiene unja pequeña luz arriba*/
+		margin: 0px;
+/* 6h6 le ponemos que su altura sea la misma que la del menu*/
+		height: 50px;
+/* 6h7 le ponemos un margen a la derecha para que no este tan pegado*/
+		margin-left: 80px;
+/* 6h8 vamos a centrar el texto verticalmente en el espacio del elemento, y
+tiene que ser el valor el de la altura que el elemento padre, es decir, todo se alinea de
+acuerdo al tamaño de la linea*/
+		line-height: 50px;
+ /* 6h9 le ponemos un minimo de anchura de 200px, ya q el 20% en algunos de los casos puede 
+ ser muy pequeño, dependiendo de la pantalla*/
+ 		min-width: 200px;
+ /* EDIT yo le puse este background green pa ve como quedaba con las imagenes
+ 		background: green;*/
+	}
+/* 6i ahora vamos a definir a los hijos, los enlaces, dentro del h1*/
+	header h1 > *{
+/* 6i1 le pondemo el display inline block porque tanto el logo como el titulo van uno a lado del otro*/
+		display: inline-block;
+/* 6i2 para que se alineen centrados*/
+		vertical-align: middle;
+/* 6i3 vamos a quitarle el text decoration a los enlaces*/
+		text-decoration: none;
+/* 6i4 tambien vamos a quitarle el color morado ese que se le pone por defecto a los enlaces cuando
+se les ha hecho click*/
+		color: white;
+/* 6i5 le ponemos el tamaño de la letra que sea el 80% del tamaño del padre*/
+		font-size: 0.8em;
+/* 6i6 le ponemos un margen superior de 0 px, pero a los lados de 36px para que tengan una separacion y 
+no se vean feos*/
+		margin:0px 3px;
+/* EDIT yo le puse aparte un margen top porque no me gustaba como quedaban como muy abajo, el gato 
+quedaba muy pegado al fondo y yo lo queria mas centrado*/
+		margin-top: -4px;
+/* EDIT yo le puse este background red para ver como quedaba con el figure 6h
+		background: red;*/
+	}
+
+/* 6j vamos a reducir el tamaño del espacio que va a ocupar la imagen del gato para que se suban a su lugar*/
+	header h1 figure{
+/* 6j1 le ponemos una altura de 40 px xq el de el padre es de 50px, para que
+quede centrado*/
+		height: 40px;
+		width: 40px;
+/* 6j2 le quitamos el margen al figure, al espacio que ocupara la imagen en si*/
+		margin: 0px;
+/* 6j3 le ponemos un color verde para saber en donde se encuentra ahorita
+EDIT una vez que el gato esta centrado (6k), ya podemos quitarle el color verde*/
+/* OJO la imagen del gato aun no se centra en el espacio del figure, hay que darle propiedades
+a la imagen tambien*/
+		/*background: green;*/
+	}
+/* 6k vamos a darle propiedades a la imagen del gato*/
+	header h1 figure img{
+/* 6k1 le vamos a decir que se ajuste al tamaño del figure*/
+	width: 100%;
+	}
+
+/* 6q vamos a empezar con el menu de navegacion*/
+header nav{
+/* 6q1 vamos a subir el menu de navegacion para que quede en linea con  lo demas*/
+	display: inline-block;
+/* 6q2 para que quede centrado en el espacio*/
+	vertical-align: middle;
+/* 6q3 que ocupe solo el 62% del espacio del padre*/
+	width: 62%;
+/* 6q4 la posicion relativa*/
+	position: relative;
+/* 6q5 para saber que espacio esta ocupando en la pagina web*/
+	/* EDIT 6t11
+	background: red;*/
+}
+
+/* 6r ahora vamos a trabajar con los botones de texto MENU y EXIT del #showMenu y hideMenu*/
+header nav #showMenu,
+header nav #hideMenu{
+	/* 6r1 vamos a ocultarlos*/
+	display: none;
+}
+
+/* 6s y vamos a trabajar ahora con la tarjetita del menu*/
+header  nav #card_menu{
+	/* 6s1 lo alineamos par que todo quede en una linea*/
+	display: inline-block;
+	/* 6s2 le quitamos el bordecito gris a la tarjeta del menu*/
+	border: none;
+	/* 6s3 vamos a quitarle el background para que quede como transparente y se le aplique el background del padre*/
+	background: none;
+	/* 6s4 le damos su posicion relative*/
+	position: relative;
+	/* 6s5 lo vamos a posicionar hasta arriba*/
+	top: 0px;
+	/* 6s6 que se ajuste al 100% de anchura del padre, que es el nav*/
+	width: 100%;
+	/* 6s7 vamos aponerle un color verde, para que veamos que el rojo es el menu
+	pero el verde es la tarjetita*/
+	/* EDIT 6t11
+	background: green;*/
+	/* 6s8 vamos a alinear el texto a la derech para que quede un espacio entre el menu y el sonia carretero*/
+	text-align: right;
+	/* 6s9 hay que quitarle el padding que le pusimos hasta abajo para que no se viera tan compacto*/
+	padding-bottom: 0px;
+	}	
+
+/* 6t ahora vamos a trabajar con el figure que contiene las imagenes que tiene dentro la tarjetita del menu*/
+header  nav #card_menu figure{
+	/* 6t1 le damos display none para que ya no aparezca el gatote*/
+	display: none;
+	/* OJO el texto se nos va hasta arriba porque le pusimos un top -20px a la UL*/
+}
+	/* 6t2 vamos a quitarle el TOP -20px para que el texto con las opciones del menu baje*/
+header  nav #card_menu ul{
+	/* 6t3 le quitamos el paddin y el margen que traen por default las UL*/
+	padding: 0px;
+	margin: 0px;
+	margin-top: -15px;
+}/*vamos a trabajar con las opciones de la lista*/
+header  nav #card_menu ul li{
+	/* 6t4 vamos a poner los elementos de la lista de opciones de menu unos a lado de otros*/
+	display: inline-block;
+	/* OJO hasta aqui el verde es el menu y el rojo la tarjeta con las opciones del menu*/
+	/* 6t5 vamos a definir la anchura de cada elemento*/
+	width: 75px;
+	/* 6t6 vamos a ver que espacio ocupa cada elemento*/
+	/* EDIT 6t11
+	background: blue;*/
+	/* 6t7 dentro del espacio que ocupa vamos a centrar el texto*/
+	text-align: center;
+	/* 6t8 vamos a hacer un poco mas pequeño el tamaño de la letra*/
+	font-size: 1.2em;
+	/* 6t9 vamos a quitarle los margenes de arriba y abajo y hay que hacer que los textos queden mas pegados*/
+	margin: 0px -2px;
+}/* ahora vamos a trabajar con los enlaces*/
+header  nav #card_menu ul li a{
+	/* 6t10 vamos a cambiarle el color a los enlaces, ya que en modo normal era negro*/
+	color: white;
+	/* 6t11 vamos a quitarle los backgrounds para que ya quede*/
+}
+
+
+/* 6g5 las flechitas tienen que cambiar de posicion al verse en pantallas mas grandes
+esto se logra cambiando el top
+EDIT para 6g10 no es el img el que hay que cambiar, sino el objeto en si*/
+	header #prev_section /*img*/,
+	header #next_section /*img*/{
+	/* nunnca esta de mas ponerle el position absolute*/
+		position: absolute;
+/* 6g6 que sean mas grandes las flechitas*/
+		width: 50px;
+		height: 50px;
+/* 6g7 el background de las flechitas si cambia a un azul mas clarito*
+que dio la diseñadora*/
+		background: #29abe2;
+/* 6g8 ambos deben de estar al mismo posicionamiento derecho, xq van
+uno encima de otro*/
+		right: 40px;
+/* 6g9 para que esten siempre por encima de todo*/
+		z-index: 999;
+/* 6g13 vamos a redondear el cuadrito pa que quede una bolita*/
+		border-radius: 50%;
+
+	}
+/* 6g10 hay que cambiarle el top, xq uno va arriba del otro*/
+	header #prev_section{
+		top: 115px;
+	}
+	header #next_section{
+		top: 190px;
+	}
+/* 6g11 vamos a centrar la imagen en el  div*/
+	header #prev_section img,
+	header #next_section img{
+/* 6g12 que sea del 100% del tamaño del div*/
+	width: 100%;
+/* 6g14 posicionamos la imagen de las flechitas dentro del circulito
+como esta al 100% del tamaño, queda centrado*/
+	top: 0px;
+	left: 0px;
+	}
+
+	/*9b20 hay que ajustar la altura del formulario para pantallas mas grandes
+	a la altura que le dimos al header, asi como tambien ajustamos la anchura*/
+	#contact_form{
+		top: 50px;
+		width: 400px;
+	}
+
+	/*9b21 el boton queda muy pegado al extremo derecho, tambien hay que despegarlo*/
+	#contact_button{
+		right: 32px;
+	}
+
+
+
+
+@media screen and (min-width: 950px){
+	body{
+		background: green;
+	}
+	#slider #home{
+	padding-bottom: 45px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

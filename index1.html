@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Sonia Carretero</title>
+	<!--en este meta para SEO le tenemos que decir que la anchura corresponda a la del dispositivo le decimos que la escala inicial sea 1, para que no inicie con zoomy que su maxima escala sea tambien de 1, para que no tenga la opcion de poder hacerle zoom con los dedos-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, mazimum-scale=1">
+	<!--ahora le vamos a poner las META o palabras que tengan mas sentido para los buscadores-->
+	<meta name="keywords" content="Diseño grafico, trabajos de diseño, servicios de diseño grafico">
+	<meta name="description" content="Diseño Grafico profesional, moderno y con buen estilo">
+	<meta name="owner" content="Sonia Carretero">
+	<meta name="author" content="TDM">
+	<meta name="robots" content="index, follow">
+
+	<scritp scr="js/modernizr-custom.js"></scritp>
+	
+	<link rel="stylesheet" href="css/normalize.css">
+	<!--este es el archivo del icomoon-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!--estos son los archivos de las fuentes-->
+	<link rel="stylesheet" href="css/aldo.css">
+	<link rel="stylesheet" href="css/aller.css">
+	<!--este es el css del proyecto-->
+	<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+	<!--3.- ahora vamos con el header-->
+	<header>
+		<h1>
+<!-- 3c q el icono del gato tambien sea enlace-->
+			<a href="index.html">
+<!-- 3a el icono del gato-->
+				<figure><img src="img/icon.png" alt=""></figure>
+			</a>
+<!-- 3b meter el titulo como vinculo-->
+			<a href="index.html">Sonia Carretero</a>
+		</h1>
+<!--5.- ahora vamos con el menu de navegacion-->
+		<nav id="ioMenu">
+<!--5a poner la imagen de la palabra menu, se le pone la misma class que a exit porque van a tener las mismas caracteristicas-->
+<!-- 6u hay que ponerle que queremos que suceda cuando se le de click, por eso hay que agregarle un onClick que va a llamar a una funcion en JS-->
+			<figure id="showMenu" class="ioMenumovil" onClick="displayMenu()">
+				<img src="img/menu.png" alt="">
+			</figure>
+<!--5b poner la tarjeta en donde esta todo el menu-->
+			<div id="card_menu">
+<!--5c poner la imagen de la palabra exit
+	6u tambien le ponemos el onlcick aqui-->
+				<figure id="hideMenu" class="ioMenumovil" onClick="displayMenu()">
+					<img src="img/exit.png" alt="">
+				</figure>
+<!--5d poner la imagen del gato dentro de la card del menu-->
+				<figure id="logo_menu">
+					<img src="img/logo.png" alt="">
+				</figure>
+<!--5e poner las opciones del menu y c/u con debe llevar enlace
+ul>li*6>a-->
+				<ul>
+<!-- OJO lo normal es poner un link a otra pagina por cada opcion del menu, pero por cuestiones de SEO
+no se va a hacer asi por eso dejamos los enclaces apuntano a ningun siito con #-->	
+<!-- 8d entonces, le vamos a dar a cada uno un onClick llamando a una funcion en la cual le decimos a que seccion
+queremos que navegue con su respctivo parametro
+a contacto no le ponemos nada porque lo que debe desplegar es el formulario de contacto-->				
+					<li><a onClick = "navSection('home')" href="#">Home</a></li>
+					<li><a onClick = "navSection('aboutme')" href="#">Sobre mi</a></li>
+					<li><a onClick = "navSection('skills')" href="#">Skills</a></li>
+					<li><a onClick = "navSection('portfolio')" href="#">Portfolio</a></li>
+					<li><a onClick = "navSection('blog')" href="#">Blog</a></li>
+					<!--9b19 le ponemos el onclick para que al pincharle aparezca el formulario de contacto-->
+					<li><a onCLick="displayFormContact('block')" href="#">Contacto</a></li>
+				</ul>
+			</div>
+		</nav>
+
+<!--4.- los botones (flechitas)de navegacion e insertar en c/u las imagenes de las flechas-->
+<!--8.- ahora hay que hacer que las flechitas de verdad nos lleven a algun lugar al darles click
+OJO, el onlcick se le da al DIV, no al img, ya que el div es la caja en la que esta guardada la img, es todo el circulito-->
+			<!--8a hay que darle el onClick y que llame a una funcion displaySection, tanto aqui como al next Section y le damos parametros (prev) o (next)-->
+			<div id="prev_section" onClick="displaySection('prev')">
+				<img src="iconos/icon-08.png" alt="">
+			</div>
+			<!--8a -->
+			<div id="next_section" onClick="displaySection('next')">
+				<img src="iconos/icon-08.png" alt="">
+			</div>
+
+	</header>
+
+<!--7.- ahora vamos a hacer un slider, que en realidad es que cambie el contenido de la pagna cuando se 
+pinchan los botones de navegacion o las opciones del menu-->
+<!--7a vamos a crear un div llamado slider, y dentro van a ir los sections-->
+	<div id="slider">
+<!--7b vamos a crear los sections con el class slide, que son las piezasque va a ir deslizando la info-->
+<!--7b a cada uno se le va a dar el id correspondiente depenndiendo del contenido que va a tener y nos vamos al CSS-->
+<!--8b8.1 cuando arranca la pagina, la unica que tiene que tener el display activo, es decirl la unica que se tiene que mostrar es HOME, por lo que se le agrega el estilo de block, y a las de mas el de none-->
+<!--10 ahora vamos a empezar a definir el contenido de la seccion HOME
+	Hay que quitarle el color al SLIDER y al HOM en CSS para dejarlo con el color azul que debe tener
+-->
+		<section class="slide" id="home" style="display:block">
+		<!--10a hacemos el DIV wue va a ser para la animacion principal, la que se ve de fondo con el class manianimation-->
+			<div class="mainanimation">
+				<!-- particles.js container -->
+          		<div id="particles-js"></div>
+			</div>
+			<!--10b vamos a definir el conjunto del logo del gato y el texto de presentacion-->
+			<div class="mainlogo">
+				<!--10c dentro tenemos el h2 con el texto
+				como le queremos dar fuerza a "diseñadora grafica" la ponemos dentro del strong-->
+				<h2>
+					Soy una <strong>Diseñadora Gráfica</strong>
+				</h2>
+				<!--10d tambien tenemos la imagen del logo del gato-->
+				<figure>
+					<img src="img/logo.png" alt="">
+				</figure>
+			</div>
+			<!--10e vamos a crear el conjunto en donde van los botones de la pagina con el class buttonspage-->
+			<div class="buttonspage">
+				<!--10f dentro creamos el boton que activa y desactiva el formulario de contacto y le ponemos el onClick del avion y del menu-->
+				<div id="contratame" onCLick="displayFormContact('block')">
+					CONTRÁTAME
+				</div>
+				<!--10g creamos el link para descargar su curriculum y lo enlazamos al documento y le damos para que se abra en un apestaña diferente-->
+				<a href="docs/curriculum2_compressed.pdf" target="_blank">
+					DESCARGAR CV
+				</a>
+			</div>
+
+
+		</section>
+		<section class="slide" id="aboutme" style="display:none"></section>
+		<section class="slide" id="skills" style="display:none"></section>
+		<section class="slide" id="portfolio" style="display:none"></section>
+		<section class="slide" id="blog" style="display:none"></section>
+	</div>
+
+<!--9.- ahora vamos a hacer el formulario de contacto, para que se abra con el avioncito y con el boton de
+texto en la tarjeta del nav
+OJO el formulario de contacto TIENE que ir hasta el final, ya que no es tan importante y su colocacion
+afecta el posicionamiento SEO
+ OJO el boton se crea hasta abajo de la pagina, despues lo posicionamos con CSS-->
+	<!--9a creamos el div contact_form, que en reralidad es la cajita o el contenedor de la info-->
+	<div id="contact_form">
+		<!--9a1 el codigo para formulario es FORM y nos abre unaction por default, le damos el id y nombre form1
+			hay que ligarlo a un archivo .PHP
+			Este formulario va a tener un method posyt, que es el de envio-->
+		<form action="contact.php" id="form1" name "form1" method="post">
+			<!--9a4 hacemos el espacio para el tachecito que cierra la caja del mensaje
+			9b18 a la cruz le ponemos una funcion onclick para que al pincharla se oculte el formulario-->
+			<div id="close_form" onCLick="displayFormContact('none')"></div>
+			<!--9a5 hacemos el espacio para el dibujito del sobre, y ponemos dentro la imagen-->
+			<figure id="logo_mensaje">
+				<img src="iconos/icon-17.png" alt="">
+			</figure>
+			
+			<!--9a3 ponemos la frase de encabezado del cuadrito de contacto-->
+			<p>Di Hola!</p>	
+			<!--9a6 ahora siguen los imputs para las entradas de texto, con el place holder se meta la frasecita
+				que aparece por defecto-->
+			<input type="text" id="name" name="name" placeholder="Tu Nombre">
+			<input type="text" id="email" name="email" placeholder="Tu email">
+			<!--9a7 para que nos dejen un mensaje no es un imput, sino una text area, por default nos aparece
+					el nombre ¿, el id y las columnas y filas, eso de columnas y filas se lo quitamos para
+					no limitar el tamaño del mensaje-->
+			<textarea name="message" id="message" placeholder="Mensaje"></textarea>
+			<!--9a8 vamos a crear el archivo PHP en el SUBLIME TEXT OJO hay que tener un servidor PHP corriendo
+			9a9 vamos a poner bonito este cuadro del mail con CSS-->
+
+
+
+
+			<!--9a2 los botones de los formularios son del tipo submit, y el formulario en si  es del tipo input
+					cuando se pulse el boton de SUBMIT se va a ejecutar el contact.php
+				Vamos a tener varios imputs: el nombre, el email, el mensaje, y todos esos imputs se los vamos a 	mandar al php, para que este lo gestione y lo convierta en un email
+				Tambien le damos un name, un id y un VALUE, quee es la frase que esta dentro del boton
+				OJO la etiqueta se abre y se cierra en la misma linea, hay que ponerle un / para cerrarla-->
+			<input type="submit" name="Submit" id="button" value="ENVIAR" />
+
+		</form>
+	</div>
+	<!--9b creamos el DIV para meter el boton del avion que llame el formulario de contacto
+	9b14 le agregamos el onlcick y la funcion para que jale el que cuando se le haga click aparezca el formulario-->
+	<div id="contact_button" onCLick="displayFormContact('block')"></div>
+
+	<!--11 vamos a hacer el codigo del FOOTER, lleva boton, redes sociales y parrafo-->
+	<footer>
+		<!--11a creamos un DIV de la clase redes sociales, cada elemento es un enlace-->
+		<div class="rrss">
+			<a href="https://twitter.com/explore" target="_blank"></a>
+			<a href="https://www.instagram.com/" target="_blank"></a>
+			<a href="https://www.facebook.com/" target="_blank"></a>
+			<a href="https://www.youtube.com/" target="_blank"></a>
+		</div>
+		<!--11b creamos el parrafito con el texto-->
+		<p>© 2020 All rights reserved | Privacity Policy</p>
+		
+
+	</footer>
+	<!--aca vamos a enlazar a osl js de las particulas que nos bajamos-->
+	<script src="js/particles.js"></script>
+	<script src="js/app.js"></script>
+
+	<script>
+
+	 // OJO la funcion displayMennu funciona solo al segundo click porque al cargar la pagina el CSS le esta indicando que no hay nada con el display none
+	 // por eso, hasta el segundo click se activa el menu y ya jala el inClick, para evitar eso
+	 // hay que indicarle a partir de que tamaño de ventana queremos que haga algo con otra funcion
+	 // es decir, asignarle  en que tamaño de ventana estamos trabajando y asi asignarle un valor
+	 // entonces vamos a crear una funcion que reconozca el tamaño de pantalla
+	 //buscamos en google "ancho de pantalla js" y copiamos la funcion que nos aparezca
+// OJO HAY QUE LLAMAR A LA FUNCION!!!
+	alertSize();
+ 		function alertSize() {
+    	var myWidth = 0, myHeight = 0;
+    	if( typeof( window.innerWidth ) == 'number' ) {
+      	//No-IE
+      	myWidth = window.innerWidth;
+      	myHeight = window.innerHeight;
+    	} 
+    	else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+     	//IE 6+
+    	myWidth = document.documentElement.clientWidth;
+    	myHeight = document.documentElement.clientHeight;
+    	} 
+    	else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+      	//IE 4 compatible
+     	myWidth = document.body.clientWidth;
+     	myHeight = document.body.clientHeight;
+    	}
+// a nosotros solo nos sirve saber de que tamaño es la pagina para saber si el display debe estar oculto o mostrado
+// copiamos de 6u2 al 4
+		    var display;
+			var card_menu = document.getElementById("card_menu");
+			display = card_menu.style.display;
+			// 6u7 vamos a preguntar por la anchura, y si es menor a 767px ( ver el CSS)
+			if (myWidth < 767){
+				card_menu.style.display = "none";
+			}
+			else{
+				card_menu.style.display = "block";
+			}
+    	}
+// con esto acabamos de hacer la depuracion del pequeño bug que hace que funcione solo hasta el segundo click
+
+	// 6u1 vamos a escibir aqui el JS  displayMenu-
+	 	function displayMenu(){
+	// 6u1.1vamos a hacer una prueba de que jala la vinculacion del onClick con la funcion con una alerta
+			//alert("holaaaaaa")
+	// el chiste de esto es que con click aparezca el menu y con otro desaparezca, asi que
+	// es cosa de activar y desactivar el display
+			// 6u2 creamos la variable display
+			var display;
+			// 6u3 creamos la variable card_menu y le damos propiedades al id card_menu
+			var card_menu = document.getElementById("card_menu");
+			// 6u4 tenemos el id card_menu y todo lo que esta dentro de el, pero solo queremos cambiar sus propiedades CSS
+			// y le damos al display las propiedades que queremos alterar
+			display = card_menu.style.display;
+			//  6u5 le vamos a darl las propiedades con un if
+			if (display == "none"){
+				card_menu.style.display = "block";
+			}
+			// 6u6 en caso de que el display este activo que lo oculte
+			else{
+				card_menu.style.display = "none";
+			}
+	 	}
+
+// 8d1 comenzamos a escribir la funcion, creamos la variable nav, hacemos el array y los cambios de colores
+// con sus respectivas busquedas, asi que copiamos codigo de las otras funciones
+	function navSection(nav){
+    	var sections = new Array(5);
+    	sections[0] = "home";
+    	sections[1] = "aboutme";
+    	sections[2] = "skills";
+    	sections[3] = "portfolio";
+    	sections[4] = "blog";
+
+	 	var show;
+    	var search;
+    	var bkgr_body;
+    	var bkgr_menu;
+// 8d2 hacemos nuevamente el recorrido de la posicion en el array
+		for (var i=0; i<5; i++){
+	 		search = document.getElementById(sections[i]);
+	 		// 8d3 y los voy a desaparecer, los voy a anular que no se muestren excepto el que estamos recorriendo
+	 		search.style.display = "none";
+	 		// 8d4 si la seccion que estoy recorriendo tiene el mismo nombre que el parametro que le hemos pasado
+	 		// que tene que mostrar, lo vamos a activar
+	 		if (nav == sections[i]){
+	 			search.style.display = "block";
+	 		// 8d5 pero en este caso el color de la barra del menu no cambia, como sucede con las flechitas
+	 		// entonces hay que hacer lo mismo que con las flechas, entonces hay que copiar y pegar el codigo de abajo de 8c
+	 			if (sections[i] == "home"){
+	 				bkgr_body = "#233D58";
+	 				bkgr_menu = "#233D58";
+	 			}
+	 			else{
+	 				bkgr_body = "#f1f1f1";
+	 				bkgr_menu = "#29abe2";
+	 			}
+	 			search.style.background = bkgr_body;
+	 			var menu = document.getElementsByTagName("header")[0];
+	 			menu.style.background = bkgr_menu;
+	 		}
+		}
+	}
+
+
+// 8b comenzamos a escribir la funcion de los botones con el parametro nav
+	 // con este codigo rastreamos todas y vemos cual es el que esta activo. Al principio sera el home, pero al navegar
+	 // ya seran otras tarjetas
+	function displaySection(nav){
+	 	// 8b1 ponemos un alert para ver que si jala bien y la conexion es correcta
+	 	//alert("hola");
+	 	// 8b2 vamos a hacer un array con las opciones del menu
+	 	// OJO recordar que la numeracion de los arrays siempre empieza con 0
+	 	var sections = new Array(5);
+    	sections[0] = "home";
+    	sections[1] = "aboutme";
+    	sections[2] = "skills";
+    	sections[3] = "portfolio";
+   		sections[4] = "blog";
+	 		// 8b3 creamos la variable de busqueda
+	 		var search;
+	 		// 8b4
+	 		var show;
+	 		// que estamos haciendo? a)navegamos del 1 al 5
+	 	for (var i=0; i<5; i++){
+	 		// 8b5 vamos a ir añadiendo cada elemento que recorremos de las secciones con el array
+	 		// b) guardamos ese elemento, osea la seccion en la q nos encontramos
+	 		search = document.getElementById(sections[i]);
+	 		// 8b6 vamos a guardar la propiedad display, asi que vamos a crear la variable show y ahi vamos a guardar la variable style
+	 		// c) y revisamos si esta activa o como esta, porque una esta activa y las demas no
+	 		show = search.style.display;
+	 		// 8b7 ahora tenemos que saber cual esta activa, es decir, cual se esta viendo, y saber si esta en show o block
+	 		if (show == "block"){
+	 			// 8b8 ya que la encontramos, si se esta mostrando, hay que ocultarla porque tenemos que activar la siguiente para atras o para adelante
+	 			search.style.display = "none";
+	 			//  8b9 cual es la que hay que activar ahora?
+	 			//  pues hay que preguntar que valor tiene nav? el previo o el siguiente? hacia donde tiene que navegar?
+	 			// si nav tiene el valor de siguiente
+	 			if (nav == "next"){
+	 				// entonces i tiene que aumentar
+	 				i++;
+	 				// y en el caso de que nos hayamos sobrepasado,  o sea que se encuentre en BLOG, (el valor del array 4) que regrese al principio
+	 				if(i>4) i=0;
+	 			}
+				// y lo mismo hacemos si estamos en HOME y le damos para atras, i tiene que disminuir
+				if(nav == "prev"){
+					i--;
+					if (i<0) i=4;
+				}
+				// ahora hay que asignarle la nueva i al elemento de rastreo
+	 			search = document.getElementById(sections[i]);
+	 			// y vamos a activarla
+	 			search.style.display = "block";
+	 			// le damos un break para que se salga ya que no tiene sentido hacer mas busqueda
+	 			break;
+	 		}			
+	 	}
+	 	// 8c ahora hay que cambiarle el color, ya que el color del HOME es diferente al de los demas
+	 	// vamos a decirle que si el elemento en el que se encuentra es el HOME el back ground del cuerpo y el menu sean del mismo color
+	 	// Esta funcion lo que hace es que si estamos en HOME nos va a dar un color, y si estamos en cualquier otra pestaña nos va a dar el segundo color
+	 	if (sections[i] == "home"){
+	 		// 8c1 creamos 2 variables con el codigo de color del HOME y el menu
+	 		bkgr_body = "#233D58";
+	 		bkgr_menu = "#233D58";
+	 	}
+	 	// 8c2 si no, le damos los colores azul y gris clarito
+	 	else{
+	 		bkgr_body = "#f1f1f1";
+	 		bkgr_menu = "#29abe2";
+	 	}
+	 	// 8c3 usamos nuevamente la variable search  y le asignamos la variable del color anterior
+	 	search.style.background = bkgr_body;
+	 	// 8c4  hay que cambiarle tambiel el color al menu, por lo q creamos una nueva variable  y que busque el header por el nombre de la etiqueta. Normalemente daria un array con todos los headers, pero como solo hay uno va a ser el elemento 0
+	 	var menu = document.getElementsByTagName("header")[0];
+	 	// 8c5 ya que lo tengo localizado y que lo puedo localizar por medio de la variable menu, ahora si le puedo cambiar el background
+	 	menu.style.background = bkgr_menu;
+	}
+
+	//9b15 hacemos la funcion en JS para que aparezca el formulario al hacerle clickcon el parametro STATUS
+	function displayFormContact(status){
+		//9b16 creamos la variable FORM y con ella controlamos el id CONTACT_FORM
+		var form = document.getElementById("contact_form");
+		//9b17 a esa vairable le ponemos que el style display sea BLOCK or NONE, lo cual va a estar en el parametro STATUS
+		form.style.display = status;
+
+	}
+
+	 </script>
+	
+</body>
+</html>
